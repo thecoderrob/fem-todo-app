@@ -297,7 +297,6 @@ body {
 }
 
 .todo-container {
-  cursor: pointer;
   padding: 1.25rem;
   justify-content: space-between;
   align-items: center;
@@ -313,7 +312,8 @@ body {
   display: flex;
 }
 
-.todo p {
+.todo > label {
+  cursor: pointer;
   word-wrap: break-word;
   word-break: break-all;
 }
@@ -361,7 +361,7 @@ body {
 }
 
 /* ~ = general sibling combinator */
-.custom-checkbox:checked ~ p {
+.custom-checkbox:checked ~ label {
   text-decoration: line-through;
   color: var(--clr-todo-crossed);
 }

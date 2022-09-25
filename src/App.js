@@ -62,14 +62,23 @@ const App = () => {
           </div>
 
           <div className="todo-form | flex bg-todo p-relative">
-            <input type="checkbox" className="custom-checkbox" name="" />
+            <input
+              type="checkbox"
+              className="custom-checkbox"
+              id="todo-form-checkbox"
+            />
+            <label for="todo-form-checkbox" className="sr-only">
+              Random Checkbox
+            </label>
             <input
               type="text"
-              name=""
-              id=""
+              id="todo-form-input"
               placeholder="Create a new todo..."
               onKeyDown={(e) => handleAddTodo(e)}
             />
+            <label for="todo-form-input" className="sr-only">
+              Press Enter to Submit
+            </label>
           </div>
         </div>
       </div>
@@ -95,17 +104,19 @@ const App = () => {
                 <div className="todo-container | flex p-relative">
                   <div className="todo | flex">
                     <input
+                      id={id}
                       type="checkbox"
                       className="custom-checkbox"
                       checked={todo.isCompleted ? true : false}
                       onChange={() => handleCompleted(id)}
                     />
-                    <p className="text-todo">{text}</p>
+                    <label for={id} className="text-todo">
+                      {text}
+                    </label>
                   </div>
-                  <button
-                    className="btn"
-                    onClick={() => handleRemoveTodo(id)}
-                  ></button>
+                  <button className="btn" onClick={() => handleRemoveTodo(id)}>
+                    <span className="sr-only">Remove {text}</span>
+                  </button>
                 </div>
               );
             })}
