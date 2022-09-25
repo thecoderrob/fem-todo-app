@@ -396,7 +396,8 @@ body {
   justify-content: center;
 }
 
-.filters .btn:where(:hover, :focus-visible) {
+.filters .btn:where(:hover, :focus-visible),
+.todo-list-footer > .btn:where(:hover, :focus-visible) {
   color: var(--clr-btn-hover);
 }
 
