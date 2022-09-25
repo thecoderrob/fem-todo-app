@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import { data } from "./data";
 
 const App = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(data);
   const [filter, setFilter] = useState("all");
 
   const handleAddTodo = (e) => {
